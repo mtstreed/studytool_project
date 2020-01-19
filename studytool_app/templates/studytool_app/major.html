@@ -1,0 +1,35 @@
+{% extends "studytool_app/parent.html" %}
+
+{% block body %}
+
+<br>
+<br>
+<h1><center>{{major.name}} Major </center></h1>
+<br>
+<br>
+<div class="container rounded" style ="background-color: #fc671b">
+  <br>
+  <h3> Mandatory courses: </h3>
+  <ul>
+    {% for course in major.courses_mandatory.all %}
+      <li> <h6><a href="{% url 'studytool_app:course' course.name %}" class="text-dark"> {{course.name}} </a></h6> </li>
+    {% endfor %}
+  </ul>
+  <br>
+</div>
+  <br>
+<div class="container rounded" style ="background-color: #fc671b">
+  {% if major.courses_selected.count > 1 %}
+    <br>
+    <h3> Plus {{major.num_selected}} of the selected courses from the list below: </h3>
+    <ul>
+      {% for course in major.courses_selected.all %}
+        <li> <h6><a href="{% url 'studytool_app:course' course.name %}" class="text-dark"> {{course.name}} </a></h6> </li>
+      {% endfor %}
+    </ul>
+    <br>
+  {% endif %}
+</div>
+<br>
+
+{% endblock %}

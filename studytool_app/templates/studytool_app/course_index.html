@@ -1,0 +1,24 @@
+{% extends "studytool_app/parent.html" %}
+
+{% block body %}
+
+<style>
+.btn:hover {
+  transition: transform .4s;
+  transform: scale(1.2);
+}
+</style>
+
+
+<h1><center> All Courses </center></h1>
+<br>
+
+<div class = "container">
+  <div class="row justify-content-center">
+    {% for course in courses %}
+      <a href="{% url 'studytool_app:course' course.name %}" class="btn btn-lg active rounded offset-1 mb-3" style = "background-color: #fc671b; opacity: 1.0" role="button" aria-pressed="true"><h3>{{course.name}}</h3></a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

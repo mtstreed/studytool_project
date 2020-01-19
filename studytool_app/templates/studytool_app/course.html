@@ -1,0 +1,32 @@
+{% extends "studytool_app/parent.html" %}
+
+{% block body %}
+
+<br>
+<div class="container rounded" style ="background-color: #fc671b">
+  <center><h2>{{course.code}} - {{course.name}}</h2></center>
+</div>
+<div class="container rounded" style ="background-color: #fc671b; font-weight:500">
+  <br>
+  <div class="mx-auto" style="width: 70%">
+    <center>{{course.blurb}}</center>
+  </div>
+  {% if course.note %}
+    <p style = "font-weight: 700"> Note: {{course.note}} </p>
+  {% endif %}
+  {% if course.coordinator %}
+    <p> Coordinator: {{course.coordinator}} <p/>
+  {% endif %}
+  <p> EUC Coordinator: {{course.euc_coordinator}} </p>
+  {% if course.euc_coordinator_email %}
+    <p> EUC Coordinator email: {{course.euc_coordinator_email}} </p>
+  {% endif %}
+  <p> Level: {{course.level}} </p>
+  {% if course.prereqs %}
+    <p> Prerequisites: {{course.prereqs}} </p>
+  {% endif %}
+  <p> Quad offered: {{course.quad}} </p>
+  <br>
+</div>
+
+{% endblock %}

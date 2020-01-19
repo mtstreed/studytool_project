@@ -1,0 +1,42 @@
+{% extends "studytool_app/parent.html" %}
+
+{% block body %}
+
+<style>
+.btn:hover {
+  transition: transform .4s;
+  transform: scale(1.2);
+}
+</style>
+
+
+<div class = "container">
+  <div class="row justify-content-center">
+    {% for major in majors %}
+    <a href="{% url 'studytool_app:major' major.name %}" class="btn btn-lg active rounded offset-1 mb-3" style = "background-color: #fc671b; opacity: 1.0" role="button" aria-pressed="true"><h3>{{major.name}}</h3></a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+
+{% comment %}
+<!-- This is old code. I switched from divs with links to buttons with links -->
+<style>
+.col-md-auto:hover {
+  transition: transform .4s;
+  transform: scale(1.2);
+}
+</style>
+
+
+
+<div class="col-md-auto rounded offset-1 mb-3" style = "background-color: #fc671b; opacity: 1.0">
+  <br>
+  <h3><a href="{% url 'studytool_app:major' major.name %}"> {{major.name}} </a></h3>
+  <br>
+</div>
+{% endcomment %}

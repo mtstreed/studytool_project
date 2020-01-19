@@ -1,0 +1,27 @@
+{% extends "studytool_app/parent.html" %}
+
+{% block body %}
+<div class = "container">
+{% if major_results %}
+  <h2> Majors: </h2>
+  <ul>
+    {% for major in major_results %}
+      <li> <h4><a href="{% url 'studytool_app:major' major.name %}" class="text-dark"> {{major.name}} </a></h4> </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<br>
+<br>
+
+{% if course_results %}
+  <h2> Courses </h2>
+  <ul>
+    {% for course in course_results %}
+      <li> <h4><a href="{% url 'studytool_app:course' course.name %}" class="text-dark"> {{course.name}} </a></h4> </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+</div>
+
+{% endblock %}

@@ -25,7 +25,8 @@ SECRET_KEY = '^22#^@pxrry@!_jp$i(2#7z#l-xlm)j#7!$=icadk$y)%8to6c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mtstreed.pythonanywhere.com']
+ALLOWED_HOSTS = ['mtstreed.pythonanywhere.com',
+                '127.0.0.1']
 
 
 # Application definition
